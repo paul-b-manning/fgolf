@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="head" th:include="header :: head"/>
+    <title>League Form</title>
+  </head>
+  <body>
+  	<div class="container">  	
+  		<div th:replace="header :: navbar"/>
+  	
+   		<div class="h4 ml-3">Leagues</div>
+		
+		<div class="ml-5">
+    		<div th:if="${message} != null" class="alert alert-danger" role="alert" th:text="${message}"/>
+		
+			<p>
+		      <a href="/admin/league/createForm">Create New League</a>
+		    </p>
+		    
+		    <table class="table">
+	  			<thead class="thead-dark">
+			      <tr>
+			        <th scope="col">NAME</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr th:each="league : ${leagues}">
+			        <td th:text="${league.name}" />
+			      </tr>
+			    </tbody>
+		    </table>
+		</div>
+		
+		<div th:replace="footer :: copy"/>	
+	</div>	
+	<div th:replace="footer :: scripts"/>
+  </body>
+</html>
+

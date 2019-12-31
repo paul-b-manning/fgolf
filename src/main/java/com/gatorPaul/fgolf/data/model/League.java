@@ -39,4 +39,11 @@ public class League {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "League [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

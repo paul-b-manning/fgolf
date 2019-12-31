@@ -27,7 +27,7 @@ public class Season {
     private String name;
     
     @Min(value=2000)
-    @Max(value=9999)
+    @Max(value=2200)
     private int year;
     
     @ManyToOne

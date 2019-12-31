@@ -1,0 +1,5 @@
+
+Notes:
+
+To run the docker image for postgres:
+docker run -d -p 5432:5432 --name postgres-fgolf -e POSTGRES_PASSWORD=REPLACE_ME -d postgres-fgolf

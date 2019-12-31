@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta name="head" th:include="header :: head"/>
+    <title>League Form</title>
+  </head>
+  <body>
+  	<div class="container">  	
+  		<div th:replace="header :: navbar"/>
+  	
+   		<div class="h4 ml-3">Create New League:</div>
+		
+		<div class="ml-5">
+    		<div th:if="${message} != null" class="alert alert-danger" role="alert" th:text="${message}"/>
+		
+			<form action="/admin/league/createLeague" th:object="${league}" method="post">
+			  <input type="hidden" name="id" th:field="*{id}" />
+			  <div class="form-group">
+			    <label for="name">League Name</label>
+			    <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="League Name Example">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		
+		<div th:replace="footer :: copy"/>	
+	</div>	
+	<div th:replace="footer :: scripts"/>
+  </body>
+</html>
+
